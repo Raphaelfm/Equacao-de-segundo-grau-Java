@@ -1,0 +1,51 @@
+package exercicios;
+import java.util.Scanner;
+
+public class EquacaoSegundoGrau {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		double a, b, c, delta, x, x1, x2;
+		
+		//Usuário deverá informar os valores de A, B e C
+		//O valor de A deverá ser maior que 0
+		System.out.println("Informe o valor de A: ");
+		a = (input.nextDouble());
+		
+		//Modo para verificar e fazer com que o usuario insira um valor diferente de 0 para A
+		while (a == 0){			
+			System.out.println("O valor de a não pode ser = 0");
+			System.out.println("Informe o valor de A: ");
+			a = (input.nextDouble());
+		}
+		
+		System.out.println("Informe o valor de B: ");
+		b = (input.nextDouble());
+		
+		System.out.println("Informe o valor de C: ");
+		c = (input.nextDouble());
+		
+		//Achando o valor de delta
+		delta = ((b * b)- 4 * a * c);
+		
+		System.out.println("Valor de Delta: " + delta);
+		
+		//Trazendo os resultados de x e x'
+		if (delta < 0){
+			System.out.println("Para delta menor do que 0, delta não possui raizes reais.");
+		}else if (delta == 0){
+			System.out.println("Para delta = 0, delta possui apenas 1 raiz sendo: ");
+			x = ((-b + (Math.sqrt(delta))/2*a));
+		}else{
+			x1 = ((-b + (Math.sqrt(delta))/2*a));
+			x2 = ((-b - (Math.sqrt(delta))/2*a));			
+			System.out.println("Valor de x1 = " + x1);
+			System.out.println("Valor de x2 = " + x2);
+		}
+		
+		
+		
+	}
+
+}
